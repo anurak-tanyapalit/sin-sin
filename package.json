@@ -1,0 +1,25 @@
+{
+  "name": "sin-sin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "mac-scrollbar": "^0.13.8",
+    "next": "16.2.3",
+    "notion-client": "^7.10.0",
+    "prismjs": "^1.30.0",
+    "rc-dropdown": "^4.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-notion-x": "^7.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.2.3"
+  }
+}
