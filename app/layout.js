@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
             backgroundColor: 'transparent',
             marginTop: 'auto'
           }}>
-            🄯 2026 Anurak Tanyapalit | All copyleft reserved
+            🄯 2026 Project Sin-Sin | All copyleft reserved
           </footer>
         </div>
       </body>
