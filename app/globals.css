@@ -182,3 +182,35 @@ html, body {
 .notion-page-header {
   border-bottom: none !important;
 }
+/* Override Notion dark-mode CSS variables */
+.notion-app.dark-mode,
+.notion-app {
+  --fg-color: #1a1a1a !important;
+  --fg-color-0: #1a1a1a !important;
+  --fg-color-1: #1a1a1a !important;
+  --fg-color-2: #3d3d3d !important;
+  --fg-color-3: #3d3d3d !important;
+  --fg-color-4: #555555 !important;
+  --fg-color-5: #555555 !important;
+  --fg-color-6: #777777 !important;
+  --fg-color-icon: #1a1a1a !important;
+  --bg-color: #ffffff !important;
+  --bg-color-0: #f9f9f9 !important;
+  --bg-color-1: #f5f5f5 !important;
+  --select-color-0: #f0f0f0 !important;
+  --select-color-1: #e8e8e8 !important;
+  --select-color-2: #e0e0e0 !important;
+}
+
+/* Force navbar/header background ให้เป็นขาว */
+.notion-app.dark-mode .notion-header,
+.notion-app.dark-mode header.notion-header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Force ข้อความใน nav links */
+.notion-page-link,
+.notion-page-title-text,
+.notion-page-title {
+  color: #1a1a1a !important;
+}
