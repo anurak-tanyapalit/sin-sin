@@ -1,56 +1,274 @@
-import './globals.css'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+/* ============================================
+   Premium White Theme — Art Portfolio
+   ============================================ */
 
-const font = Plus_Jakarta_Sans({ subsets: ['latin'] })
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-export const metadata = {
-  metadataBase: new URL('https://www.anurak-tanyapalit.site'),
-  title: {
-    default: 'Anurak Tanyapalit | Art Portfolio',
-    template: '%s | Anurak Tanyapalit',
-  },
-  description: 'Discover the art portfolio and creative works of Anurak Tanyapalit.',
-  openGraph: {
-    title: 'Anurak Tanyapalit | Art Portfolio',
-    description: 'Discover the art portfolio and creative works of Anurak Tanyapalit.',
-    url: 'https://www.anurak-tanyapalit.site',
-    siteName: 'Anurak Tanyapalit',
-    locale: 'en_US',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+:root {
+  --bg-color: #ffffff;
+  --text-main: #1a1a1a;
+  --text-secondary: #3d3d3d;
+  --text-muted: #888888;
+  --card-bg: #fafafa;
+  --card-border: #ebebeb;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.12);
+  --radius-card: 12px;
+  --transition-base: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={font.className}>
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <main style={{ flexGrow: 1 }}>
-            {children}
-          </main>
-          <footer style={{
-            textAlign: 'center',
-            padding: '24px 0',
-            fontSize: '0.5rem',
-            color: 'var(--text-secondary)',
-            backgroundColor: 'transparent',
-            marginTop: 'auto'
-          }}>
-            🄯 2026 Project Sin-Sin | All copyleft reserved
-          </footer>
-        </div>
-      </body>
-    </html>
-  )
+/* ============ BASE ============ */
+html, body {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Page fade-in */
+.notion-app {
+  animation: fadeInPage 0.5s ease both;
+  background-color: #ffffff !important;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ HEADER / NAV ============ */
+.notion-header,
+.notion-nav-header,
+.notion-topbar,
+.notion-page-header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04) !important;
+  transition: background-color var(--transition-base);
+}
+
+.notion-page-header {
+  border-bottom: none !important;
+}
+
+.notion-header *,
+.notion-nav-header *,
+.notion-topbar *,
+.notion-page-header * {
+  color: #1a1a1a !important;
+}
+
+.notion-header a,
+.notion-nav-header a,
+.notion-topbar a {
+  color: #1a1a1a !important;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color var(--transition-base);
+}
+
+.notion-header a:hover,
+.notion-nav-header a:hover,
+.notion-topbar a:hover {
+  color: #555555 !important;
+}
+
+/* ============ PAGE COVER ============ */
+.notion-page-cover {
+  filter: brightness(0.93) contrast(1.02);
+  transition: filter 0.4s ease;
+}
+
+.notion-page-cover:hover {
+  filter: brightness(0.97) contrast(1.02);
+}
+
+/* ============ PAGE TITLE ============ */
+.notion-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  color: #1a1a1a !important;
+}
+
+/* ============ TEXT ============ */
+.notion-text,
+.notion-h1, .notion-h2, .notion-h3 {
+  color: #1a1a1a !important;
+}
+
+.notion-h1 { letter-spacing: -0.02em; }
+.notion-h2 { letter-spacing: -0.015em; }
+
+/* ============ GALLERY ============ */
+.notion-collection-gallery {
+  gap: 28px !important;
+  padding: 8px 0 !important;
+}
+
+/* ============ CARDS ============ */
+.notion-collection-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: var(--radius-card) !important;
+  overflow: hidden;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base) !important;
+  box-shadow: var(--card-shadow) !important;
+  cursor: pointer;
+}
+
+.notion-collection-card:hover {
+  transform: translateY(-10px) scale(1.005);
+  box-shadow: var(--card-shadow-hover) !important;
+  border-color: #d0d0d0 !important;
+}
+
+/* Cover image zoom */
+.notion-collection-card-cover {
+  border-bottom: none !important;
+  overflow: hidden;
+}
+
+.notion-collection-card-cover img {
+  transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.notion-collection-card:hover .notion-collection-card-cover img {
+  transform: scale(1.07);
+}
+
+/* Card body text */
+.notion-collection-card-body {
+  padding: 12px 16px 16px !important;
+}
+
+.notion-collection-card .notion-page-title-text {
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: #1a1a1a !important;
+  letter-spacing: -0.01em;
+}
+
+/* ============ PAGE CONTENT ============ */
+.notion-page-content {
+  background-color: transparent !important;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.notion-collection {
+  background: transparent !important;
+}
+
+/* ============ DIVIDERS / LINES ============ */
+.notion-hr,
+.notion-divider {
+  border: none !important;
+  border-top: 1px solid #efefef !important;
+  background: transparent !important;
+  margin: 2.5em 0 !important;
+  opacity: 0.7;
+}
+
+.notion-app hr,
+.notion-app .notion-hr,
+.notion-app .notion-divider {
+  opacity: 0.5 !important;
+}
+
+/* Remove structural borders */
+.notion-collection-gallery,
+.notion-collection-list,
+.notion-table,
+.notion-table td,
+.notion-table th {
+  border: none !important;
+}
+
+.notion-collection-header {
+  border-bottom: none !important;
+  display: none !important;
+}
+
+.notion-collection-item {
+  border-bottom: none !important;
+}
+
+.notion-list-view,
+.notion-board-view {
+  border: none !important;
+}
+
+/* ============ ICONS (HIDDEN) ============ */
+.notion-page-icon,
+.notion-page-icon-wrapper,
+.notion-page-title-icon,
+.notion-title-icon,
+.notion-page-icon-inline,
+.notion-property-page-icon,
+.notion-title .notion-page-icon,
+.notion-title svg,
+.notion-link-mention-icon,
+.notion-link-mention-preview-icon,
+.notion-bookmark-link-icon,
+.notion-page-link svg,
+.notion-page-icon-span,
+.notion-emoji {
+  display: none !important;
+}
+
+/* ============ PAGE LINKS ============ */
+.notion-page-link,
+.notion-page-title-text,
+.notion-page-title {
+  color: #1a1a1a !important;
+  transition: color var(--transition-base);
+}
+
+.notion-page-link:hover {
+  color: #555555 !important;
+}
+
+/* ============ CSS VARIABLES OVERRIDE ============ */
+.notion-app.dark-mode,
+.notion-app {
+  --fg-color: #1a1a1a !important;
+  --fg-color-0: #1a1a1a !important;
+  --fg-color-1: #1a1a1a !important;
+  --fg-color-2: #3d3d3d !important;
+  --fg-color-3: #3d3d3d !important;
+  --fg-color-4: #555555 !important;
+  --fg-color-5: #555555 !important;
+  --fg-color-6: #888888 !important;
+  --fg-color-icon: #1a1a1a !important;
+  --bg-color: #ffffff !important;
+  --bg-color-0: #fafafa !important;
+  --bg-color-1: #f5f5f5 !important;
+  --select-color-0: #f0f0f0 !important;
+  --select-color-1: #e8e8e8 !important;
+  --select-color-2: #e0e0e0 !important;
+}
+
+/* Force dark-mode header to white */
+.notion-app.dark-mode .notion-header,
+.notion-app.dark-mode header.notion-header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Outline override */
+.notion-app,
+.notion-app [class*="notion-"] {
+  outline-color: transparent !important;
 }
