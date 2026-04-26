@@ -65,6 +65,28 @@ html, body {
   box-shadow: none !important;
 }
 
+/* Header text color */
+.notion-header *,
+.notion-nav-header *,
+.notion-topbar *,
+.notion-page-header * {
+  color: #1a1a1a !important;
+}
+
+/* Header links */
+.notion-header a,
+.notion-nav-header a,
+.notion-topbar a {
+  color: #1a1a1a !important;
+  text-decoration: none;
+}
+
+.notion-header a:hover,
+.notion-nav-header a:hover,
+.notion-topbar a:hover {
+  color: #3d3d3d !important;
+}
+
 /* Page content */
 .notion-page-content {
   background-color: transparent !important;
@@ -159,36 +181,4 @@ html, body {
 
 .notion-page-header {
   border-bottom: none !important;
-}
-/* Header text color */
-.notion-header,
-.notion-nav-header,
-.notion-topbar,
-.notion-page-header {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-/* เพิ่ม: บังคับสีข้อความใน navbar ให้เป็นเทาดำ */
-.notion-header *,
-.notion-nav-header *,
-.notion-topbar *,
-.notion-page-header * {
-  color: #1a1a1a !important;
-}
-
-/* เพิ่ม: link ใน navbar */
-.notion-header a,
-.notion-nav-header a,
-.notion-topbar a {
-  color: #1a1a1a !important;
-  text-decoration: none;
-}
-
-.notion-header a:hover,
-.notion-nav-header a:hover,
-.notion-topbar a:hover {
-  color: #3d3d3d !important;
 }
