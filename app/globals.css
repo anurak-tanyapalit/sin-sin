@@ -1,14 +1,14 @@
 /* Minimal White Theme */
 :root {
   --bg-color: #ffffff;
-  --text-main: #333333;
-  --text-secondary: #333333;
+  --text-main: #1a1a1a;
+  --text-secondary: #3d3d3d;
 }
 
 /* FORCE LIGHT MODE */
 html, body {
   background-color: #ffffff !important;
-  color: #333333 !important;
+  color: #1a1a1a !important;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -79,7 +79,7 @@ html, body {
 .notion-text,
 .notion-title,
 .notion-h1, .notion-h2, .notion-h3 {
-  color: #333333 !important;
+  color: #1a1a1a !important;
 }
 
 .notion-title {
@@ -126,7 +126,7 @@ html, body {
 
 .notion-collection-header {
   border-bottom: none !important;
-  display: none !important; /* Often just "Works" title with line you don't want */
+  display: none !important;
 }
 
 /* Reset light mode borders/shadows that react-notion-x forces */
