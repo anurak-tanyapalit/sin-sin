@@ -1,216 +1,56 @@
-/* Minimal White Theme */
-:root {
-  --bg-color: #ffffff;
-  --text-main: #1a1a1a;
-  --text-secondary: #3d3d3d;
+import './globals.css'
+import { Plus_Jakarta_Sans } from 'next/font/google'
+
+const font = Plus_Jakarta_Sans({ subsets: ['latin'] })
+
+export const metadata = {
+  metadataBase: new URL('https://www.anurak-tanyapalit.site'),
+  title: {
+    default: 'Anurak Tanyapalit | Art Portfolio',
+    template: '%s | Anurak Tanyapalit',
+  },
+  description: 'Discover the art portfolio and creative works of Anurak Tanyapalit.',
+  openGraph: {
+    title: 'Anurak Tanyapalit | Art Portfolio',
+    description: 'Discover the art portfolio and creative works of Anurak Tanyapalit.',
+    url: 'https://www.anurak-tanyapalit.site',
+    siteName: 'Anurak Tanyapalit',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
-/* FORCE LIGHT MODE */
-html, body {
-  background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Add micro-animations to notion images */
-.notion-page-cover {
-  filter: brightness(0.95);
-}
-
-.notion-collection-gallery {
-  gap: 24px;
-}
-
-/* Card background */
-.notion-collection-card {
-  background-color: #f9f9f9 !important;
-  border: 1px solid #eeeeee !important;
-  border-radius: 6px !important;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02) !important;
-}
-
-.notion-collection-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
-  border-color: #dddddd !important;
-}
-
-.notion-collection-card-cover img {
-  transition: transform 0.5s ease;
-}
-
-.notion-collection-card:hover .notion-collection-card-cover img {
-  transform: scale(1.05);
-}
-
-/* Overall overrides */
-/* Notion main container */
-.notion-app {
-  background-color: #ffffff !important;
-}
-
-/* Header */
-.notion-header,
-.notion-nav-header,
-.notion-topbar,
-.notion-page-header {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-/* Header text color */
-.notion-header *,
-.notion-nav-header *,
-.notion-topbar *,
-.notion-page-header * {
-  color: #1a1a1a !important;
-}
-
-/* Header links */
-.notion-header a,
-.notion-nav-header a,
-.notion-topbar a {
-  color: #1a1a1a !important;
-  text-decoration: none;
-}
-
-.notion-header a:hover,
-.notion-nav-header a:hover,
-.notion-topbar a:hover {
-  color: #3d3d3d !important;
-}
-
-/* Page content */
-.notion-page-content {
-  background-color: transparent !important;
-}
-
-/* Remove white blocks */
-.notion-collection {
-  background: transparent !important;
-}
-
-/* Text color */
-.notion-text,
-.notion-title,
-.notion-h1, .notion-h2, .notion-h3 {
-  color: #1a1a1a !important;
-}
-
-.notion-title {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-/* Remove all structural lines */
-.notion-hr {
-  border-top: 1px solid #eeeeee !important;
-  background: transparent !important;
-}
-
-.notion-collection-gallery,
-.notion-collection-list,
-.notion-table,
-.notion-table td,
-.notion-table th {
-  border: none !important;
-}
-
-/* Hide page icons next to titles */
-.notion-page-icon,
-.notion-page-icon-wrapper,
-.notion-page-title-icon,
-.notion-title-icon,
-.notion-page-icon-inline,
-.notion-property-page-icon,
-.notion-title .notion-page-icon,
-.notion-title svg,
-.notion-link-mention-icon,
-.notion-link-mention-preview-icon,
-.notion-bookmark-link-icon,
-.notion-page-link svg,
-.notion-page-icon-span,
-.notion-emoji {
-  display: none !important;
-}
-
-/* Remove all other possible lines in gallery/works page */
-.notion-collection-card-cover {
-  border-bottom: none !important;
-}
-
-.notion-collection-header {
-  border-bottom: none !important;
-  display: none !important;
-}
-
-/* Reset light mode borders/shadows that react-notion-x forces */
-.notion-collection-item {
-  border-bottom: none !important;
-}
-
-.notion-list-view, .notion-board-view {
-  border: none !important;
-}
-
-/* Clean up dividers */
-.notion-hr,
-.notion-divider {
-  border-top: 1px solid #f0f0f0 !important;
-  background: transparent !important;
-  margin: 2em 0 !important;
-}
-
-.notion-app hr,
-.notion-app .notion-hr,
-.notion-app .notion-divider {
-  opacity: 0.5 !important;
-}
-
-.notion-app,
-.notion-app [class*="notion-"] {
-  outline-color: #ffffff !important;
-}
-
-.notion-page-header {
-  border-bottom: none !important;
-}
-/* Override Notion dark-mode CSS variables */
-.notion-app.dark-mode,
-.notion-app {
-  --fg-color: #1a1a1a !important;
-  --fg-color-0: #1a1a1a !important;
-  --fg-color-1: #1a1a1a !important;
-  --fg-color-2: #3d3d3d !important;
-  --fg-color-3: #3d3d3d !important;
-  --fg-color-4: #555555 !important;
-  --fg-color-5: #555555 !important;
-  --fg-color-6: #777777 !important;
-  --fg-color-icon: #1a1a1a !important;
-  --bg-color: #ffffff !important;
-  --bg-color-0: #f9f9f9 !important;
-  --bg-color-1: #f5f5f5 !important;
-  --select-color-0: #f0f0f0 !important;
-  --select-color-1: #e8e8e8 !important;
-  --select-color-2: #e0e0e0 !important;
-}
-
-/* Force navbar/header background ให้เป็นขาว */
-.notion-app.dark-mode .notion-header,
-.notion-app.dark-mode header.notion-header {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Force ข้อความใน nav links */
-.notion-page-link,
-.notion-page-title-text,
-.notion-page-title {
-  color: #1a1a1a !important;
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={font.className}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <main style={{ flexGrow: 1 }}>
+            {children}
+          </main>
+          <footer style={{
+            textAlign: 'center',
+            padding: '24px 0',
+            fontSize: '0.5rem',
+            color: 'var(--text-secondary)',
+            backgroundColor: 'transparent',
+            marginTop: 'auto'
+          }}>
+            🄯 2026 Project Sin-Sin | All copyleft reserved
+          </footer>
+        </div>
+      </body>
+    </html>
+  )
 }
