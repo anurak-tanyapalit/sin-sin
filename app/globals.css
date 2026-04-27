@@ -1,16 +1,16 @@
 /* ============================================
-   Premium White Theme — Art Portfolio
+   Premium Light Theme — Art Portfolio
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #F7F4F0;
   --text-main: #1a1a1a;
   --text-secondary: #3d3d3d;
   --text-muted: #888888;
-  --card-bg: #fafafa;
-  --card-border: #ebebeb;
+  --card-bg: #F0EDE8;
+  --card-border: #E2DDD8;
   --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   --card-shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.12);
   --radius-card: 12px;
@@ -19,7 +19,7 @@
 
 /* ============ BASE ============ */
 html, body {
-  background-color: #ffffff !important;
+  background-color: #F7F4F0 !important;
   color: #1a1a1a !important;
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@ html, body {
 /* Page fade-in */
 .notion-app {
   animation: fadeInPage 0.5s ease both;
-  background-color: #ffffff !important;
+  background-color: #F7F4F0 !important;
 }
 
 @keyframes fadeInPage {
@@ -45,7 +45,7 @@ html, body {
 .notion-nav-header,
 .notion-topbar,
 .notion-page-header {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(247, 244, 240, 0.92) !important;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
@@ -129,7 +129,7 @@ html, body {
 .notion-collection-card:hover {
   transform: translateY(-10px) scale(1.005);
   box-shadow: var(--card-shadow-hover) !important;
-  border-color: #d0d0d0 !important;
+  border-color: #C8C3BC !important;
 }
 
 /* Cover image zoom */
@@ -253,18 +253,18 @@ html, body {
   --fg-color-5: #555555 !important;
   --fg-color-6: #888888 !important;
   --fg-color-icon: #1a1a1a !important;
-  --bg-color: #ffffff !important;
-  --bg-color-0: #fafafa !important;
-  --bg-color-1: #f5f5f5 !important;
-  --select-color-0: #f0f0f0 !important;
-  --select-color-1: #e8e8e8 !important;
-  --select-color-2: #e0e0e0 !important;
+  --bg-color: #F7F4F0 !important;
+  --bg-color-0: #F0EDE8 !important;
+  --bg-color-1: #EAE6E0 !important;
+  --select-color-0: #E4E0DA !important;
+  --select-color-1: #DDD9D2 !important;
+  --select-color-2: #D5D0C9 !important;
 }
 
 /* Force dark-mode header to white */
 .notion-app.dark-mode .notion-header,
 .notion-app.dark-mode header.notion-header {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(247, 244, 240, 0.92) !important;
 }
 
 /* Outline override */
