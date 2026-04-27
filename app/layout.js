@@ -1,7 +1,4 @@
 import './globals.css'
-import { Plus_Jakarta_Sans } from 'next/font/google'
-
-const font = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: new URL('https://www.anurak-tanyapalit.site'),
@@ -34,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <main style={{ flexGrow: 1 }}>
             {children}
