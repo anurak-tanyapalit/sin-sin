@@ -2,7 +2,8 @@
    Premium Dark Theme — Art Portfolio
    ============================================ */
 
-/* Notion system font stack — no external font needed */
+/* Notion Mono font stack + Noto Sans Mono for Thai */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;500;600;700&subset=thai&display=swap');
 
 :root {
   --bg-color: #141414;
@@ -27,7 +28,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 1.6;
-  font-family: iawriter-mono, Nitti, Menlo, Courier, 'Cascadia Code', monospace;
+  font-family: iawriter-mono, Nitti, Menlo, Courier, 'Cascadia Code', 'Noto Sans Mono', monospace;
 }
 
 /* Force Notion Mono font stack — overrides react-notion-x defaults */
@@ -41,7 +42,7 @@ html, body {
 .notion-title,
 .notion-collection-card,
 .notion-page-title-text {
-  font-family: iawriter-mono, Nitti, Menlo, Courier, 'Cascadia Code', monospace !important;
+  font-family: iawriter-mono, Nitti, Menlo, Courier, 'Cascadia Code', 'Noto Sans Mono', monospace !important;
 }
 
 /* Page fade-in */
